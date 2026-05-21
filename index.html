@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Slop Test — AIの404、スキルあり / なしで見比べる</title>
+  <link rel="stylesheet" href="css/viewer.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="bar__title">
+      <h1>404 Slop Test</h1>
+      <p>同じ「404 not found」を、アンチ AI スロップのスキルあり / なしで見比べる。</p>
+    </div>
+    <div class="toggle" role="group" aria-label="表示するバージョンを選ぶ">
+      <button type="button" class="toggle__btn is-active" data-version="plain" aria-pressed="true">
+        スキルなし
+      </button>
+      <button type="button" class="toggle__btn" data-version="hallmark" aria-pressed="false">
+        スキルあり
+      </button>
+    </div>
+  </header>
+
+  <main class="stage">
+    <iframe class="stage__frame" id="frame" src="pages/plain-404.html" title="404 ページのプレビュー"></iframe>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* Hallmark · tokens — theme: Newsprint (broadsheet · salmon paper · burgundy accent)
+   Single-theme token export for the 404 Slop Test "あり版（hallmark-404）".
+   Every colour / font in hallmark-404.css references these by name. */
+
+:root {
+  /* ── Colour ──────────────────────────────────────────────── */
+  --color-paper:      oklch(92%  0.045 50);   /* salmon-pink broadsheet stock */
+  --color-paper-2:    oklch(89%  0.050 50);
+  --color-paper-3:    oklch(84%  0.054 45);   /* recessive watermark numeral */
+  --color-rule:       oklch(68%  0.030 40);
+  --color-rule-2:     oklch(35%  0.020 35);
+  --color-muted:      oklch(46%  0.022 35);
+  --color-neutral:    oklch(30%  0.025 30);
+  --color-ink-2:      oklch(20%  0.030 28);
+  --color-ink:        oklch(15%  0.030 25);
+  --color-accent:     oklch(32%  0.10  28);   /* burgundy */
+  --color-accent-ink: oklch(45%  0.13  30);
+  --color-focus:      oklch(48%  0.18  30);
+
+  /* ── Type families ──────────────────────────────────────────
+     Latin sets in Playfair / Crimson Pro; Japanese glyphs fall
+     through to the OS Mincho serif — a deliberate editorial pairing. */
+  --font-display: "Playfair Display", "Hiragino Mincho ProN", "Yu Mincho",
+                  "Crimson Pro", ui-serif, Georgia, serif;
+  --font-body:    "Crimson Pro", "Hiragino Mincho ProN", "Yu Mincho",
+                  ui-serif, Georgia, serif;
+  --font-label:   "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --display-weight: 700;
+
+  /* ── Type scale ─────────────────────────────────────────── */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1.0625rem;
+  --text-md:   1.1875rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.625rem;
+  --text-2xl:  2rem;
+  --text-3xl:  2.75rem;
+  --text-display:   clamp(2.75rem, 5vw + 1rem, 5rem);
+  --text-display-s: clamp(2rem, 3vw + 1rem, 2.875rem);
+
+  /* ── Line height / tracking ─────────────────────────────── */
+  --lh-tight:   1.02;
+  --lh-snug:    1.18;
+  --lh-normal:  1.55;
+  --lh-relaxed: 1.65;
+
+  --tracking-display: -0.022em;
+  --tracking-tight:   -0.008em;
+  --tracking-normal:  0;
+  --tracking-label:   0.06em;
+
+  /* ── Spacing (4pt scale) ────────────────────────────────── */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6.5rem;
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --page-gutter: clamp(1.5rem, 6vw, 5rem);
+  --measure:     58ch;
+  --rule-hair:   0.5px;
+  --rule-fine:   1px;
+  --radius-pill: 0;            /* editorial themes stay square */
+
+  /* ── Motion ─────────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long:  420ms;
+
+  /* ── Z-index ────────────────────────────────────────────── */
+  --z-base:   1;
+  --z-raised: 10;
+}

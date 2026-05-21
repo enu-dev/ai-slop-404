@@ -1,0 +1,176 @@
+/* Hallmark · genre: editorial · macrostructure: Manifesto · theme: Newsprint · enrichment: none · nav: n/a · footer: n/a */
+/* Hallmark · pre-emit critique: P5 H5 E5 S4 R5 V5 */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-3xl) var(--page-gutter);
+}
+
+/* ── Kicker — a broadsheet section marker, not a sparkle eyebrow ── */
+.page__kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: 0;
+  font-family: var(--font-label);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+.page__kicker::before {
+  content: "";
+  width: var(--space-xl);
+  height: var(--rule-fine);
+  background: var(--color-accent);
+}
+
+/* ── The message leads — not the numeral ── */
+.page__body {
+  position: relative;
+  z-index: var(--z-raised);
+  max-width: 36rem;
+}
+
+.page__headline {
+  margin: 0 0 var(--space-lg);
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: var(--text-display);
+  line-height: 1.34;
+  letter-spacing: var(--tracking-display);
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.page__lede {
+  margin: 0;
+  max-width: var(--measure);
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+  color: var(--color-ink-2);
+}
+
+.page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+/* ── Primary action — square editorial block, no pill, no glow ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: var(--space-sm) var(--space-lg);
+  border: var(--rule-fine) solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-label);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background-color var(--dur-short) var(--ease-out),
+              border-color var(--dur-short) var(--ease-out),
+              color var(--dur-short) var(--ease-out);
+}
+.btn:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.btn:active {
+  background: var(--color-ink-2);
+  border-color: var(--color-ink-2);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* ── Secondary action — a real text link with a hairline underline ── */
+.link-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  white-space: nowrap;
+  padding-bottom: 2px;
+  border-bottom: var(--rule-fine) solid var(--color-rule);
+  color: var(--color-ink-2);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: border-color var(--dur-short) var(--ease-out),
+              color var(--dur-short) var(--ease-out);
+}
+.link-back:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.link-back:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+.link-back__arrow { font-style: normal; }
+
+/* ── The numeral, demoted — a recessive typographic anchor that
+      bleeds off the corner, never the screaming gradient hero ── */
+.page__numeral {
+  position: absolute;
+  right: clamp(-1rem, -2vw, 0rem);
+  bottom: clamp(-2.5rem, -5vw, 0rem);
+  z-index: var(--z-base);
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: clamp(10rem, 34vw, 25rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: var(--color-paper-3);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── One quiet orchestrated entrance — editorial restraint ── */
+@media (prefers-reduced-motion: no-preference) {
+  .page__kicker,
+  .page__body {
+    animation: rise var(--dur-long) var(--ease-out) both;
+  }
+  .page__body { animation-delay: 90ms; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
